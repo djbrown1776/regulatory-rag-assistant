@@ -8,3 +8,28 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Build artifacts 
+dist/
+build/
+*.egg-info/
+
+# Local development settings 
+.env
+.vscode/
+.idea/
+
+# Operating System
+.DS_Store
+
+# Testing and Type Checking
+.pytest_cache/
+.mypy_cache/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Application Data 
+storage/
+chroma_db/
+*.log
