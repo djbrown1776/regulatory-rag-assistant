@@ -31,5 +31,5 @@ build/
 
 # Application Data 
 storage/
-chroma_db/
+chroma.db/
 *.log
