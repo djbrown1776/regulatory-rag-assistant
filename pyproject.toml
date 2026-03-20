@@ -1,7 +1,7 @@
 [project]
-name = "llamaapp"
+name = "regulatory-rag-assistant"
 version = "0.1.0"
-description = "Add your description here"
+description = "RAG chatbot for Texas RRC waste management regulations"
 readme = "README.md"
 requires-python = ">= 3.12"
 dependencies = [

@@ -54,9 +54,8 @@ Texas RRC website
 
 ```
 ├── main.py                        # Streamlit chat application
-├── ingestion_pinecone_5.py        # Pinecone ingestion pipeline
-├── download_docs_pdf.py           # PDF document crawler
-├── download_docs_txt.py           # Text/Markdown document crawler
+├── ingestion.py                   # Pinecone ingestion pipeline
+├── crawl_docs.py                  # Text/Markdown document crawler
 ├── crawled-docs/                  # Downloaded RRC regulatory documents
 ├── pyproject.toml                 # Project metadata and dependencies (uv)
 ├── uv.lock                        # Lockfile
@@ -64,6 +63,6 @@ Texas RRC website
 ```
 ## How It Works
  
-1. **Crawl** — `download_docs_txt.py` scrapes Texas RRC waste management pages and saves them as Markdown files.
-2. **Ingest** — `ingestion_pinecone_5.py` reads the Markdown files, splits them into 512 token chunks with 50-token overlap, embeds each chunk with `mistral-embed`, and upserts vectors to Pinecone.
+1. **Crawl** — `crawl_docs.py` scrapes Texas RRC waste management pages and saves them as Markdown files.
+2. **Ingest** — `ingestion.py` reads the Markdown files, splits them into 512 token chunks with 50-token overlap, embeds each chunk with `mistral-embed`, and upserts vectors to Pinecone.
 3. **Query** — When a user asks a question in the Streamlit UI, LlamaIndex retrieves the top 3 most relevant chunks from Pinecone, deduplicates and filters them through the post processors, then sends the refined context plus the question to Mistral NeMo for a grounded answer.
